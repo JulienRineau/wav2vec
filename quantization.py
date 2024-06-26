@@ -15,7 +15,7 @@ class QuantizerConfig:
     initial_temp: float
 
 
-class GumbelVectorQuantizer(nn.Module):
+class VectorQuantizer(nn.Module):
     def __init__(self, config: QuantizerConfig):
         super().__init__()
         self.num_groups = config.num_groups
@@ -82,7 +82,7 @@ if __name__ == "__main__":
         initial_temp=2.0,
     )
 
-    quantizer = GumbelVectorQuantizer(config)
+    quantizer = VectorQuantizer(config)
 
     batch_size = 64
     seq_length = 100
